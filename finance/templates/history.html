@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+    
+{% block title %}
+    Trasactions
+{% endblock %}
+
+
+{% block main %}
+
+        <table class="table table-striped">
+
+            <thead>
+
+                   <th>Symbol</th>
+                   <th>Type</th>
+                   <th>Shares</th>
+                   <th>Price</th> 
+                   <th>Transacted</th> 
+
+            </thead>
+
+
+            <tbody>
+
+                {% for transaction in transactions %}
+            
+                <tr>
+                    
+                    <td> {{  transaction["symbol"].upper()  }} </td>
+                    <td> {{  transaction["type"]  }} </td>
+                    <td> {{  transaction["shares"]  }} </td>
+                    <td> ${{  transaction["price"]  }} </td>
+                    <td> {{  transaction["time"]  }} </td>
+                
+                </tr>
+                {% endfor %}
+            
+
+
+
+                </tbody>
+
+
+
+        </table>
+
+{% endblock %}

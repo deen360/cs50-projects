@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+                        document.addEventListener('DOMContentLoaded', function() {
+
+                        let correct = document.querySelector('.correct');
+                        correct.addEventListener('click', function () {
+                        correct.style.backgroundColor = "green";
+                        document.getElementById('com').innerHTML ="Correct!";
+                        });
+                        
+                        
+                        
+                        let incorrects = document.querySelectorAll('.incorrect');
+                        for(let i = 0; i < incorrects.length; i++) { 
+                            incorrects[i].addEventListener('click', function () {
+                            incorrects[i].style.backgroundColor = "red";
+                            document.getElementById('com').innerHTML ="Incorrect!";
+                            });
+                        }
+                        });
+
+                        function word() {
+                            let ans = document.getElementById("quiz").value
+                            if (ans === "wizkid"){
+                                    document.getElementById("quiz").style.backgroundColor ="green"
+                                     document.getElementById('cot').innerHTML ="correct"
+                                        }
+
+                                else{
+                                    document.getElementById("quiz").style.backgroundColor ="red" 
+                                    document.getElementById('cot').innerHTML ="incorrect"
+                                    }
+                 
+                
+            }
+                    
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                     <h3>
+
+
+
+                        <p>
+                            Who won the last world cup?
+                        </p>
+
+                                <button class="incorrect">FRANCE</button>
+                                <button class="incorrect">BRAZIL</button >
+                                <button class="correct">ITALY</button>
+                                <button class="incorrect">GERMANY</button>
+                                    <p id = "com">
+
+                                    </p>
+
+
+                     </h3>
+
+
+
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>
+                    Who sang Ojuelegba?
+                    <p>
+                        <input type="text" id="quiz" >
+                        <input type="button" onclick= word() value="Check Answer" id = "w">
+                    </p>
+                    <p id = "cot">
+                    </p>
+
+                </h3>
+
+
+
+            </div>
+
+        </div>
+    </body>
+</html>
